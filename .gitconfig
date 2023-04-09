@@ -1,0 +1,24 @@
+[user]
+  name = Ishikawa Ryuto
+  email = ishikawa-r@protonmail.com
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[alias]
+  st = status
+  sh = stash
+  ch = checkout
+  br = branch -a -vv
+  cm = commit -m
+
+[pull]
+  rebase = false
+
+[fetch]
+  prune = true
+
+[init]
+  defaultBranch = main
