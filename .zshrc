@@ -50,6 +50,3 @@ stty -ixon
 alias g="git"
 alias ls="ls -a --color"
 alias ll="ls -l"
-alias vim="nvim"
-alias dc="docker-compose"
-
