@@ -55,3 +55,13 @@ alias g="git"
 alias gh='cd $(ghq root)/$(ghq list | peco)'
 alias ls="ls -a --color"
 alias ll="ls -l"
+
+# sdkman
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# nvm
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
