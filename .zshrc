@@ -43,6 +43,10 @@ setopt pushd_ignore_dups
 setopt hist_ignore_space
 setopt no_beep
 setopt print_eight_bit
+setopt transient_rprompt
+
+unsetopt share_history
+
 stty -ixon
 
 # aliases
@@ -51,13 +55,3 @@ alias g="git"
 alias gh='cd $(ghq root)/$(ghq list | peco)'
 alias ls="ls -a --color"
 alias ll="ls -l"
-
-# paths
-
-export GO_PATH=$HOME/go
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=$PATH:$GO_PATH/bin
