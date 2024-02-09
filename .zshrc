@@ -1,3 +1,9 @@
+# load
+
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
+autoload -Uz compinit
+
 # color
 
 autoload -Uz colors
@@ -13,10 +19,16 @@ export SAVEHIST=1000
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
 %# "
 
-# vcs_info
+# iterm tab title
 
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
+function _current_directory() {
+    if [ $ITERM_SESSION_ID ]; then
+        echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print $1}'| rev)\007"
+    fi
+}
+add-zsh-hook precmd _current_directory
+
+# vcs_info
 
 zstyle ':vcs_info:*' formats '%F{green}[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}[%b|%a]%f'
@@ -29,10 +41,10 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 # complete
  
-autoload -Uz compinit
 compinit
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+setopt transient_rprompt
 
 # other options
 
