@@ -11,8 +11,8 @@ colors
 
 # history
 
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 # prompt
 
@@ -22,6 +22,7 @@ PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
 # iterm tab title
 
 function _current_directory() {
+    # iTerm2の場合、タブ名にカレントディレクトリを設定
     if [ $ITERM_SESSION_ID ]; then
         echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print $1}'| rev)\007"
     fi

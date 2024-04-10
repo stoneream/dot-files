@@ -10,3 +10,13 @@ ln -sf "${DOTFILES_DIR}/.gitconfig" ${HOME}/.gitconfig
 
 ln -sf "${DOTFILES_DIR}/.tmux.conf" ${HOME}/.tmux.conf
 ```
+
+## Homebrewに関して (mac)
+
+```bash
+# 現況、インストールしているパッケージをダンプ
+brew bundle dump
+
+# パッケージのインストール
+brew bundle
+```
