@@ -11,8 +11,23 @@ colors
 
 # history
 
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+setopt histignorealldups
+setopt share_history
+setopt inc_append_history
+
+# complement from history (Ctrl+R)
+
+function _peco_history_selector() {
+    BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N _peco_history_selector
+bindkey '^r' _peco_history_selector
 
 # prompt
 
@@ -48,7 +63,6 @@ setopt transient_rprompt
 
 # other options
 
-setopt histignorealldups sharehistory
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
