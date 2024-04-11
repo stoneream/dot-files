@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+brew "coreutils"
 brew "ffmpeg"
 brew "ghq"
 brew "git"
