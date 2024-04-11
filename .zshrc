@@ -37,6 +37,7 @@ PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
 # iterm tab title
 
 function _current_directory() {
+    # iTerm2の場合、タブ名にカレントディレクトリを設定
     if [ $ITERM_SESSION_ID ]; then
         echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print $1}'| rev)\007"
     fi
@@ -69,6 +70,10 @@ setopt pushd_ignore_dups
 setopt hist_ignore_space
 setopt no_beep
 setopt print_eight_bit
+setopt transient_rprompt
+
+unsetopt share_history
+
 stty -ixon
 
 # aliases
@@ -78,12 +83,12 @@ alias gh='cd $(ghq root)/$(ghq list | peco)'
 alias ls="ls -a --color"
 alias ll="ls -l"
 
-# paths
+# sdkman
 
-export GO_PATH=$HOME/go
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# nvm
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=$PATH:$GO_PATH/bin
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
