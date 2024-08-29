@@ -29,6 +29,30 @@ function _peco_history_selector() {
 zle -N _peco_history_selector
 bindkey '^r' _peco_history_selector
 
+# uppercase part and expand command with a space (e.g. "G " --> "| grep")
+setopt extended_glob
+
+typeset -A abbreviations
+abbreviations=(
+    "G"    "| grep"
+    "X"    "| xargs -I {}"
+    "J"    "| jq '.'"
+    "S"    "| sed -e 's/"
+    "C"    "| cut -d ' ' -f 1"
+    "P"    "| pbcopy"
+    "W"    "| while IFS= read -r item || [ -n \"\$item\" ]; do"
+)
+
+magic-abbrev-expand() {
+    local MATCH
+    LBUFFER=${LBUFFER%%(#m)[-_a-zA-Z0-9]#}
+    LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+    zle self-insert
+}
+
+zle -N magic-abbrev-expand
+bindkey " " magic-abbrev-expand
+
 # prompt
 
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
