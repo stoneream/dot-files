@@ -1,5 +1,6 @@
 # load
 
+bindkey -e
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 autoload -Uz compinit
@@ -116,3 +117,14 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+# default editor
+
+if command -v code &> /dev/null
+then
+    export EDITOR='code --wait'
+elif command -v vim &> /dev/null
+then
+    export EDITOR='vim'
+else
+fi
