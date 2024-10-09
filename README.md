@@ -4,7 +4,11 @@
 # リポジトリのカレントディレクトリにて
 DOTFILES_DIR=$(pwd)
 
+ln -sf ${DOTFILES_DIR}/.ssh_config ${HOME}/.ssh/config
+mkdir -p ${HOME}/.ssh/conf.d/hosts
+
 ln -sf "${DOTFILES_DIR}/.zshrc" ${HOME}/.zshrc
+ln -sf "${DOTFILES_DIR}/.zshenv" ${HOME}/.zshenv
 
 ln -sf "${DOTFILES_DIR}/.gitconfig" ${HOME}/.gitconfig
 
