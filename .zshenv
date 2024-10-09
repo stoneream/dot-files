@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8
+
 # golang
 export PATH=$PATH:~/.local/go/bin
 export GOPATH=$HOME/go
