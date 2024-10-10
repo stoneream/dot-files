@@ -1,7 +1,9 @@
 export LANG=en_US.UTF-8
 
 # golang
-export PATH=$PATH:~/.local/go/bin
+
+export PATH=$PATH:$HOME/.local/go/bin
+
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
@@ -15,3 +17,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+# Rust
+
+source "$HOME/.cargo/env"
