@@ -18,6 +18,16 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 
-# Rust
+# rust
 
 source "$HOME/.cargo/env"
+
+# python
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export LOCAL_BIN=$HOME/.local/bin
+export PATH=$PATH:$LOCAL_BIN
+
