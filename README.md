@@ -9,7 +9,7 @@ mkdir -p ${HOME}/.ssh/conf.d/hosts
 
 ln -sf "${DOTFILES_DIR}/.zshrc" ${HOME}/.zshrc
 ln -sf "${DOTFILES_DIR}/.zshenv" ${HOME}/.zshenv
-ln -sf "${DOTFILES_DIR}/scirpt" ${HOME}/script
+ln -sf "${DOTFILES_DIR}/script" ${HOME}/script
 
 ln -sf "${DOTFILES_DIR}/.gitconfig" ${HOME}/.gitconfig
 

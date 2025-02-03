@@ -127,6 +127,6 @@ if [ -f ~/.zsh_secret ]; then
     source ~/.zsh_secret
 fi
 
-function discord_update() {
+function update_discord() {
     source ~/script/discord_update.sh
 }
