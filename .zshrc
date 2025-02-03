@@ -60,12 +60,15 @@ bindkey " " magic-abbrev-expand
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
 %# "
 
-# iterm tab title
+# ターミナルのタブ名にカレントディレクトリを設定
 
 function _current_directory() {
-    # iTerm2の場合、タブ名にカレントディレクトリを設定
     if [ $ITERM_SESSION_ID ]; then
+        # iTerm2の場合はITERM_SESSION_IDが設定されている
         echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print $1}'| rev)\007"
+    else
+        # それ以外の場合はUbuntuとみなす
+        echo -ne "\033]0;${USER}@${HOST}: $(pwd | rev | awk -F \/ '{print $1}'| rev)\007"
     fi
 }
 add-zsh-hook precmd _current_directory
@@ -119,3 +122,11 @@ then
     export EDITOR='vim'
 else
 fi
+
+if [ -f ~/.zsh_secret ]; then
+    source ~/.zsh_secret
+fi
+
+function discord_update() {
+    source ~/script/discord_update.sh
+}
