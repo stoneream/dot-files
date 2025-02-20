@@ -22,4 +22,4 @@
 # 
 # m h  dom mon dow   command
 
-0 7 * * * ~/memo/bin/init-diary.sh
+0 7 * * * {{DOT_FILES_PATH}}/script/init_diary.sh

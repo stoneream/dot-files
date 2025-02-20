@@ -16,6 +16,18 @@ ln -sf "${DOTFILES_DIR}/.gitconfig" ${HOME}/.gitconfig
 ln -sf "${DOTFILES_DIR}/.tmux.conf" ${HOME}/.tmux.conf
 ```
 
+## crontab
+
+```bash
+./scirpt/crontab_update.sh
+```
+
+## diary-generator
+
+```bash
+go install github.com/stoneream/diary-generator/v2@latest
+```
+
 ## Homebrewに関して (mac)
 
 ```bash

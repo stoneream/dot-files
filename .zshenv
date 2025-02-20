@@ -30,6 +30,11 @@ eval "$(pyenv init -)"
 
 eval "$(direnv hook zsh)"
 
+# tfenv
+
+export TFENV_ROOT="$HOME/.tfenv"
+[[ -d $TFENV_ROOT/bin ]] && export PATH="$TFENV_ROOT/bin:$PATH"
+
 # other
 
 export LOCAL_BIN=$HOME/.local/bin
