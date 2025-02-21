@@ -2,7 +2,8 @@
 
 DIARY_PATH="$HOME/memo/diary"
 
-if [ -e $DIARY_PATH ]; then
+if [ ! -d $DIDIARY_PATH ]; then
+  echo "Error: $DIARY_PATH is not found."
   exit 1
 fi
 
