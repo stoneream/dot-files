@@ -1,5 +1,9 @@
 #!/bin/bash -ue
 
+GOPATH=$HOME/go
+GOBIN=$GOPATH/bin
+PATH=$PATH:$GOBIN
+
 DIARY_PATH="$HOME/memo/diary"
 
 if [ ! -d $DIARY_PATH ]; then
