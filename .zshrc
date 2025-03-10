@@ -130,3 +130,7 @@ fi
 function update_discord() {
     source ~/script/discord_update.sh
 }
+
+function merge_dir_files() {
+    source ~/script/merge_dir_files.sh $1 $2
+}
