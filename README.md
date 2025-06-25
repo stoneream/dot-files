@@ -14,6 +14,8 @@ ln -sf "${DOTFILES_DIR}/script" ${HOME}/script
 ln -sf "${DOTFILES_DIR}/.gitconfig" ${HOME}/.gitconfig
 
 ln -sf "${DOTFILES_DIR}/.tmux.conf" ${HOME}/.tmux.conf
+
+ln -sf "${DOTFILES_DIR}/.claude" ${HOME}/.claude
 ```
 
 ## crontab
